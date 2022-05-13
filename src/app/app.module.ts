@@ -10,11 +10,15 @@ import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
+import { GetallbookComponent } from './component/getallbook/getallbook.component';
+import { QuickviewComponent } from './component/quickview/quickview.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { ForgotpasswordComponent } from './component/forgotpassword/forgotpasswo
     SignUpComponent,
     LoginComponent,
     DashboardComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    GetallbookComponent,
+    QuickviewComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,9 @@ import { ForgotpasswordComponent } from './component/forgotpassword/forgotpasswo
     FormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+     FlexLayoutModule,
 
   ],
   providers: [],

@@ -1,0 +1,73 @@
+<div class="mainheader" fxLayout="column">
+    <div style="width: 80%;">
+        <div style="width: 100%; margin-top: 2%;">
+            <span style="color:gray;">Home/</span><span> Books(16) </span>
+        </div>
+        <div class="header">
+            <div class="Books">
+                <div class="smallimages">
+                    <div class="small1">
+                        <img class="img1" src="../../../assets/Bookimg/book1.png" alt="">
+                    </div>
+                    <div class="small2">
+                        <img class="img2" src="../../../assets/Bookimg/small book.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="maincontent" fxLayout="column" fxLayoutAlign="none center">
+                <div class="image" fxLayoutAlign="center center">
+                    <img src="../../../assets/Bookimg/book1.png" alt="bookImage">
+                </div>
+
+                <button class="btn">ADD TO BAG</button>
+                <button class="btn2">
+                    <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
+                </button>
+
+            </div>
+            <div class="bookdetails">
+                <div class="bookname">
+                    Don't Make Me Think {{bookdata?.bookName}}
+                </div>
+                <div class="author">
+                    by Steve krug {{bookdata?.authorName}}
+                </div>
+                <div class="rating" fxLayoutAlign="space-evenly center">
+                    4.5<img class="Star" src="../../../assets/Bookimg/star_outline_white_24dp (1).svg" alt="">
+                </div>
+                <p id="count">(20)</p>
+                <div class="quantity">
+                    {{bookdata?.bookCount}}
+                </div>
+
+                <div class="price" fxLayout="row">
+                    <div class="discountprice">
+                        Rs.{{bookdata?.discountPrice}}
+                    </div>
+                    <div class="originalprice">
+                        <del> Rs.2000{{bookdata?.originalPrice}} </del>
+                    </div>
+                </div>
+                <div class="para">
+                    <span class="booktitle">Book Detail</span>
+                    <p class="bookparagraph">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                        id
+                        est laborum.
+                    </p>
+                </div>
+                <div class="feedback">
+                    <p>Customer Feedback</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

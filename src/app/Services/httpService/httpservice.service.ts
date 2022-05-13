@@ -14,5 +14,9 @@ export class HttpserviceService {
     
     return this.HttpClient.post(this.BaseUrl+url,reqdata,token && httpOptions) 
   }
+  
+  getService(url: string, token: boolean= false, httpOptions: any={}){ 
 
+    return this.HttpClient.get(this.BaseUrl+url,token && httpOptions) 
+ }
 }

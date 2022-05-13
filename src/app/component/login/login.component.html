@@ -1,4 +1,4 @@
-<div class="Block " fxLayout="row" fxLayoutAlign=" center center">
+<div class="Block">
     <mat-card class="mat1">
 
         <div>
@@ -11,7 +11,7 @@
     </mat-card>
 
     <mat-card class="mat2">
-        <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="row">
             <div class="login">
                 <P>LOGIN</P>
             </div>
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" >
             <div class="form-fields">
 
                 <div class="field">
@@ -52,8 +52,7 @@
                 </div>
                
                     <button class="button1" (click)="onSubmit()">Login</button>
-                
-
+            
                 <div class="or">
                     <h2>-------OR-------</h2>
                 </div>

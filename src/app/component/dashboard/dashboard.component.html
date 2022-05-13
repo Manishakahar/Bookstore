@@ -1,6 +1,7 @@
 <div class="container">
-  <mat-toolbar class="tool" fxLayout="row" fxLayoutAlign="space-between center">
-    <div class="titleText" fxLayout="row" fxLayoutGap="2%">
+  <div>
+  <mat-toolbar class="tool" fxLayout="row" >
+    <div class="titleText" fxLayout="row">
       <img src="../../../assets/Bookimg/icon(1).png"  class="img-Icon"/>
       <a id="text">BookStore</a>
     </div>
@@ -10,10 +11,13 @@
         <mat-icon class="searchIcon">search</mat-icon>
       </button>
       <input class="searchInput" type="text" name="search" placeholder="Search.." />
-
     </mat-card>
    
     <button  class="Profile" mat-button >Profile <mat-icon class="searchIcon" >perm_identity</mat-icon></button> 
     <button class="cart" mat-button >Cart<mat-icon >shopping_cart</mat-icon></button>
   </mat-toolbar>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
