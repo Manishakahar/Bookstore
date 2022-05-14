@@ -1,0 +1,48 @@
+<div class="main">
+    <div class="heading">
+        <span class="home">Home /</span><span> My cart</span>
+    </div>
+
+
+    <div class="expansion-panel">
+        <mat-accordion class="panel">
+            <mat-expansion-panel [expanded]="true" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        My Cart ({{cartcount}})
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="image" fxLayoutAlign="start center">
+                    <img class="bookImage" src="../../../assets/Bookimg/book1.png">
+                </div>
+
+                <div class="entirebook" fxLayout="column" fxLayout.sm="column">
+
+                    <div class="bookname">
+                        {{book.bookName}}
+                    </div>
+                    <div class="author">
+                        by {{book.authorName}}
+                    </div>
+                    <div class="price" fxLayout="row" fxLayoutGap="10px">
+                        <div class="discountprice">
+                            Rs.{{book.discountPrice}}
+                        </div>
+                        <div class="originalprice">
+                            <del> Rs.{{book.originalPrice}} </del>
+                        </div>
+                    </div>
+                    <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
+                        <img class="negative" src="../../../assets/Bookimg/add_circle_outline_black_24dp.svg"
+                            style="cursor: pointer;">
+                        <div class="inputBox" fxLayoutAlign="center center"><b>1</b></div>
+                        <img class="positivebutton" src="../../../assets/Bookimg/remove_circle_outline_black_24dp.svg"
+                            style="color:pointer;">
+                            <span class="remove" >Remove</span>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+    </div>
+</div>

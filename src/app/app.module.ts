@@ -12,6 +12,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider'
 
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { LoginComponent } from './component/login/login.component';
@@ -19,6 +21,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
 import { GetallbookComponent } from './component/getallbook/getallbook.component';
 import { QuickviewComponent } from './component/quickview/quickview.component';
+import { GetcartComponent } from './component/getcart/getcart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { QuickviewComponent } from './component/quickview/quickview.component';
     DashboardComponent,
     ForgotpasswordComponent,
     GetallbookComponent,
-    QuickviewComponent
+    QuickviewComponent,
+    GetcartComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import { QuickviewComponent } from './component/quickview/quickview.component';
     MatToolbarModule,
     MatIconModule,
     MatSelectModule,
-     FlexLayoutModule,
+    FlexLayoutModule,
+    MatExpansionModule,
+    MatDividerModule
 
   ],
   providers: [],

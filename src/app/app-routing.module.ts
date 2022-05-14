@@ -6,22 +6,25 @@ import { ForgotpasswordComponent } from './component/forgotpassword/forgotpasswo
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetallbookComponent } from './component/getallbook/getallbook.component';
 import { QuickviewComponent } from './component/quickview/quickview.component';
+import { GetcartComponent } from './component/getcart/getcart.component';
 
 
 const routes: Routes = [
-  { path:'signUp',component:SignUpComponent},
-  {path:'login', component:LoginComponent},
-  {path:'forgot',component:ForgotpasswordComponent},
+  { path: 'signUp', component: SignUpComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot', component: ForgotpasswordComponent },
   // {path:'dashboard',component:DashboardComponent},
-  
+
 
   {
-    path: 'dashboard', component:DashboardComponent,
+    path: 'dashboard', component: DashboardComponent,
 
     children: [
       { path: '', redirectTo: 'notes', pathMatch: 'full', },
-      {path:'getallbook',component:GetallbookComponent},
-      {path:'quickview',component:QuickviewComponent}
+      { path: 'getallbook', component: GetallbookComponent },
+      { path: 'quickview', component: QuickviewComponent },
+      { path: 'getcart', component: GetcartComponent }
+
     ]
   },
 ];

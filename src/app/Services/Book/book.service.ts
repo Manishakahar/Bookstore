@@ -23,4 +23,43 @@ export class BookService {
     }
     return this.httpService.getService('/bookstore_user/get/book', true, headers)
   }
+
+  addToCart(productID: any) {  
+    this.token = localStorage.getItem('token')
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token   
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add_cart_item/{product_id}' + productID, {}, true, header)
+  }
+
+  AddToWishList(data: any) {
+    this.token = localStorage.getItem('token');
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add_wish_list/'+data._id,{},true, header);
+  }
+
+  getWishList(){
+    this.token = localStorage.getItem('token');
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    console.log(header); 
+    
+    return this.httpService.getService('/bookstore_user/get_wishlist_items',true,header);
+
+  }
 }

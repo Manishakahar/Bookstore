@@ -17,7 +17,7 @@
     <div class="bookcard">
         <div class="entirebook" *ngFor="let Book of booksArray">
             <div class="bookimg">
-                <img class="img1" src="../../../assets/Bookimg/book1.png" alt="">
+                <img class="img1" src="../../../assets/Bookimg/book1.png" alt="" routerLink="/dashboard/quickview">
             </div>
             <h2 class="title">{{Book.bookName}}</h2>
             <p id="para">by {{Book.author}}</p>
@@ -32,9 +32,9 @@
                 <div class="actual-price">
                     Rs.{{Book.price}}
                 </div>
-                <button mat-raised-button class="add-btn"> ADD TO BAG </button>
-                <!-- <button mat-raised-button class="add-btn"> WHISH LIST</button> -->
-                <button class="btn2">
+                <button mat-raised-button class="add-btn" > ADD TO BAG </button>
+               
+                <button class="btn2" (click)="AddToWishList(Book)">
                     <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
                 </button>
             </div>

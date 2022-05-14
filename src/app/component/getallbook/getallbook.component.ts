@@ -9,8 +9,10 @@ import { BookService } from 'src/app/Services/Book/book.service';
 })
 export class GetallbookComponent implements OnInit {
   booksArray: any = [];
-  constructor(private httpGetAllBook: BookService,private router: Router) { }
-  
+  data: any;
+  token: any;
+  constructor(private httpGetAllBook: BookService, private router: Router) { }
+
   ngOnInit(): void {
     this.getAllBook();
   }
@@ -21,5 +23,15 @@ export class GetallbookComponent implements OnInit {
       this.booksArray = response.result;
       console.log(this.booksArray);
     });
+  }
+
+  AddToWishList(data: any) {
+    this.httpGetAllBook.AddToWishList(data).subscribe((response: any) => {
+      console.log('Wishlist GetBooks', response)
+
+    },
+      (error: any) => {
+        console.log(error);
+      });
   }
 }

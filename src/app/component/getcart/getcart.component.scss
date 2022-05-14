@@ -1,0 +1,66 @@
+.main {
+    height: 100%;
+    margin: 2% 109px;
+}
+
+.home {
+    color: gray;
+    cursor: pointer;
+}
+
+.expansion-panel {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.panel {
+    width: 70%;
+    margin-left: -9%;
+    margin-top: -2%;
+}
+.sort{
+margin-top: -24px;
+margin-left: 61%;
+border-radius: none;
+outline: none;
+}
+
+.bookImage {
+    margin-top: 2%;
+    height: 95px;
+    width: 80px;
+
+}
+
+.entirebook {
+    margin-top: -2%;
+    margin-left: 10%;
+}
+
+.bookname {
+    margin-left: 15px;
+    font-family: Roboto;
+    font-weight: 500;
+    margin-top: 8px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.quantity {
+    margin-left: 4%;
+    display: flex;
+    flex-direction: row;
+}
+.inputBox{
+    margin-left: 3%;
+}
+.positivebutton {
+    margin-left: 3%;
+}
+
+.remove {
+    margin-left: 3%;
+}
