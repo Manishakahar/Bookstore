@@ -6,7 +6,7 @@ import { HttpserviceService } from '../httpService/httpservice.service';
   providedIn: 'root'
 })
 export class UserService {
-   
+    token:any;
   constructor(private httpService: HttpserviceService) { }
 
   signUpUser(reqdata:any){
@@ -28,4 +28,6 @@ export class UserService {
     };
     return this.httpService.postService('bookstore_user/login', reqdata, false, headers)
   }
+
+  
 }

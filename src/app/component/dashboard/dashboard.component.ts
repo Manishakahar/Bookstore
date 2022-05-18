@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   Login(){
-    this.route.navigate(['login']);
+    this.route.navigateByUrl('login');
   }
 
 }

@@ -1,48 +1,203 @@
 <div class="main">
     <div class="heading">
-        <span class="home">Home /</span><span> My cart</span>
+        <span class="home" routerLink="/dashboard/getallbook">Home /</span><span> My cart</span>
+    </div>
+
+    <div class="main-content">
+        <div class="title-header" fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="2px">
+                <span class="title">My Cart(1)</span>
+                <div>
+                    <select class="location">
+                        <option> Use Current Location</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="bodyBox">
+
+            <div style="margin-left:36px;" fxLayoutGap="40px" fxLayout="row wrap" fxLayoutAlign="start center"
+                *ngFor="let Book of booksArray">
+
+                <div>
+                    <img src="../../../assets/Bookimg/book1.png" alt="" class="image">
+                </div>
+                
+                    <div class="details-content" fxLayout="column" fxLayoutAlign="start none">
+
+                        <div style="margin-left:15px;" fxLayoutGap="20px">
+
+                            <div fxLayout="column">
+                                <h2 class="title">Don't Make Me Think{{Book.bookName}}</h2>
+                                <p id="para">by Steve krug{{Book.author}}</p>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                            <b style="margin-left: 18px;">Rs. 1000{{Book.price}}</b>
+                            <del id="del"> Rs.2000{{Book.price}}</del>
+                        </div>
+                        <div class="quantitiy" fxLayout="row">
+                            <img class="circle" src="../../../assets/Bookimg/remove_circle_outline_black_24dp.svg">
+                            <div class="inputBox" fxLayoutAlign="center center">1</div>
+                            <img class="circle" src="../../../assets/Bookimg/add_circle_outline_black_24dp.svg">
+                        </div>
+
+                        <button class="remove-btn" (click)="removeCart(Book)">Remove</button>
+                    </div>
+            </div>
+        </div>
+
+        <div fxLayoutAlign="end" style="padding-right:20px;">
+            <button mat-raised matTooltip="Place Order!" class="button1" *ngIf="showButton"
+                (click)="addressToggle()">
+                Place Order</button>
+        </div>
+        <div *ngIf="!showButton"></div>
     </div>
 
 
-    <div class="expansion-panel">
-        <mat-accordion class="panel">
-            <mat-expansion-panel [expanded]="true" hideToggle>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        My Cart ({{cartcount}})
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="image" fxLayoutAlign="start center">
-                    <img class="bookImage" src="../../../assets/Bookimg/book1.png">
-                </div>
+    
+    <div class="address" *ngIf="showAddress">
+        <mat-toolbar fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="2px">
+                <span class="title">Address Details</span>
+            </div>
+        </mat-toolbar>
+    </div>
+    <div class="customer" fxLayout="column" *ngIf="!showAddress">
 
-                <div class="entirebook" fxLayout="column" fxLayout.sm="column">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="margin: 10px;">
 
-                    <div class="bookname">
-                        {{book.bookName}}
+            <form [formGroup]="BookingForm" class="customerAddress" fxLayout="column wrap" fxLayoutGap="30px;">
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+                    <span>
+                        <h2 id="title-name">Customer Details</h2>
+                    </span>
+                    <div class="newAddress" fxFlex="center">
+                        <button mat-raised-button  *ngIf="showContinueButton" class="address-btn">Add New Address</button>
                     </div>
-                    <div class="author">
-                        by {{book.authorName}}
-                    </div>
-                    <div class="price" fxLayout="row" fxLayoutGap="10px">
-                        <div class="discountprice">
-                            Rs.{{book.discountPrice}}
+
+                    <div class="form-conten" div fxLayout="row wrap" fxLayoutAlign="space-between center" class="full">
+                        <div class="fullName">
+                            <div>
+                                <mat-label>FullName</mat-label>
+                            </div>
+                            <mat-form-field appearance="outline" class="content" id="email" with="100%">
+                                <input type="Text" matInput placeholder="" formControlName="fullName">
+                                <mat-error fxLayoutAlign="end">Full Name required !</mat-error>
+                            </mat-form-field>
                         </div>
-                        <div class="originalprice">
-                            <del> Rs.{{book.originalPrice}} </del>
+                        <div class="phoneNumber">
+                            <div>
+                                <mat-label>Mobile Number</mat-label>
+                            </div>
+                            <mat-form-field appearance="outline" class="content" id="phonenumber">
+                                <input type="tel" matInput placeholder="" formControlName="phonenumber">
+                                <mat-error fxLayoutAlign="end">Mobile Number required !</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="address-form" fxLayout="column">
+                            <div>
+                                <mat-label>Address</mat-label>
+                            </div>
+                        
+                            <mat-form-field appearance="outline" id="address">
+                                <input type="text" matInput placeholder="" formControlName="fullAddress">
+                                <mat-error fxLayoutAlign="end">Address required !</mat-error>
+                            </mat-form-field>
+
+                            <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                                <div class="city">
+                                    <div>
+                                        <mat-label>city/town</mat-label>
+                                    </div>
+                                    <mat-form-field appearance="outline" class="content" id="city">
+                                        <input type="text" matInput placeholder="" formControlName="city">
+                                        <mat-error fxLayoutAlign="end">city/town is required !</mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="state">
+                                    <div>
+                                        <mat-label>State</mat-label>
+                                    </div>
+                                    <mat-form-field appearance="outline" class="content" id="state">
+                                        <input type="tel" matInput placeholder="" formControlName="state">
+                                        <mat-error fxLayoutAlign="end">Mobile Number required !</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                 
+                                <div fxLayout="column" fxLayoutGap="7px">
+                                    <span class="type">Type</span>
+                                    <mat-radio-group aria-label="Select an option" class ="radio">
+                                        <mat-radio-button class="home1" value="1">home</mat-radio-button>
+                                        <mat-radio-button class="work" value="2">work</mat-radio-button>
+                                        <mat-radio-button class="other" value="3">other</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+
+                                <div fxLayoutAlign="end">
+                                    <button mat-raised matTooltip="Continue" class="continue-btn" 
+                                     *ngIf="showContinueButton"  (click)="onSubmit()">Continue</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
-                        <img class="negative" src="../../../assets/Bookimg/add_circle_outline_black_24dp.svg"
-                            style="cursor: pointer;">
-                        <div class="inputBox" fxLayoutAlign="center center"><b>1</b></div>
-                        <img class="positivebutton" src="../../../assets/Bookimg/remove_circle_outline_black_24dp.svg"
-                            style="color:pointer;">
-                            <span class="remove" >Remove</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="order" fxLayout="row" *ngIf="showCart">
+        <mat-toolbar fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="2px">
+                <span class="title">Order Summary</span>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="summary" *ngIf="!showCart">
+
+        <div fxLayout="column">
+
+            <div *ngFor="let Book of booksArray" fxLayout="row wrap" fxLayoutAlign="space-between center"
+                class="bodyBox">
+
+                <span>
+                    <h2 class="title-order">Order Summary</h2>
+                </span>
+
+                <div fxLayoutGap="40px" fxLayout="row wrap" fxLayoutAlign="start center" style="margin-right: 415px;">
+
+                    <div>
+                        <img src="../../../assets/Bookimg/book1.png" alt="" class="image2">
+                    </div>
+
+                    <div fxLayout="column" fxLayoutAlign="start none">
+
+                        <div  fxLayoutGap="20px">
+
+                            <div fxLayout="column">
+                                <h2 class="title">Don't Make Me Think{{Book.bookName}}</h2>
+                                <p id="para">by Steve krug{{Book.author}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="order-price">
+                            <b style="margin-left: 4px;">Rs. 1000{{Book.price}}</b>
+                            <del id="del2"> Rs. 2000{{Book.price}}</del>
+                        </div>
                     </div>
                 </div>
-            </mat-expansion-panel>
-
-        </mat-accordion>
+            </div>
+            <div>
+                <button type="submit" mat-raised-button matTooltip="Continue" class="button2"
+                 *ngIf="!showContinueButton" (click)="ordersummary()">CheckOut</button>
+            </div>
+        </div>
     </div>
 </div>

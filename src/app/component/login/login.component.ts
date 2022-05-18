@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.loginForm.valid) {
+       console.log(this.loginForm.value);
 
       let reqdata = {
         email: this.loginForm.value.email,
@@ -35,10 +36,10 @@ export class LoginComponent implements OnInit {
       }
       this.userService.loginUser(reqdata).subscribe((response: any) => {
         console.log(response);
-      },
-        (error: any) => {
-          console.log(error)
-        })
+        this.router.navigateByUrl('/dashboard')
+        localStorage.setItem('token',response.result.accessToken);
+      })
     }
   }
+
 }

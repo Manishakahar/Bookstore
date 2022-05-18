@@ -9,7 +9,7 @@ import { BookService } from 'src/app/Services/Book/book.service';
 })
 export class GetallbookComponent implements OnInit {
   booksArray: any = [];
-  data: any;
+  Book: any;
   token: any;
   constructor(private httpGetAllBook: BookService, private router: Router) { }
 
@@ -25,13 +25,17 @@ export class GetallbookComponent implements OnInit {
     });
   }
 
-  AddToWishList(data: any) {
-    this.httpGetAllBook.AddToWishList(data).subscribe((response: any) => {
+  AddToWishList(Book: any) {
+    this.httpGetAllBook.AddToWishList(Book._id).subscribe((response: any) => {
       console.log('Wishlist GetBooks', response)
 
-    },
-      (error: any) => {
-        console.log(error);
-      });
-  }
+    })
+   }
+
+   AddToBag(Book: any){
+   this.httpGetAllBook.addToBag(Book._id).subscribe((response:any) =>{
+     console.log('Add To Bag ',response)
+   })
+   }
+
 }

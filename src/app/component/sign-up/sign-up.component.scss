@@ -61,7 +61,7 @@
     font-size: 20px;
     font-weight: 500;
     color: gray;
-      cursor: pointer;
+    cursor: pointer;
 
 }
 
@@ -75,8 +75,8 @@
     font-size: 20px;
     font-weight: 500;
     color: gray;
-       cursor: pointer;
-       z-index: 2;
+    cursor: pointer;
+    z-index: 2;
 
 }
 
@@ -97,9 +97,11 @@
     height: 18%;
 
 }
-.email{
+
+.email {
     height: 18%;
 }
+
 .password {
 
     height: 18%;
@@ -118,3 +120,32 @@
     color: white;
     position: relative;
 }
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 851px) and (-webkit-min-device-pixel-ratio: 1) {
+    .mat2 {
+        background-color: white;
+        height: 500px;
+        width: 350px;
+        display: flex;
+        position: relative;
+        margin-left: 1%;
+        top: 7%;
+        padding: 16px;
+    }
+
+
+    .Block {
+        background-color: grey;
+        width: 135%;
+        height: 100%;
+    }
+
+    .mat1 {
+        display: none;
+
+    }
+}
+
+// @media only screen and (min-device-width: 300px) and (max-device-width: 740px) and (-webkit-min-device-pixel-ratio: 1){
+
+// }

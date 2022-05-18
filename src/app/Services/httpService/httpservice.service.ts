@@ -6,17 +6,26 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpserviceService {
-  BaseUrl = environment.baseUrl;  
+  BaseUrl = environment.baseUrl;
 
-  constructor(private HttpClient: HttpClient) { } 
+  constructor(private HttpClient: HttpClient) { }
 
-  postService(url: string, reqdata: any, token: boolean= false, httpOptions: any={}){ 
-    
-    return this.HttpClient.post(this.BaseUrl+url,reqdata,token && httpOptions) 
+  postService(url: string, reqdata: any, token: boolean = false, httpOptions: any = {}) {
+
+    return this.HttpClient.post(this.BaseUrl + url, reqdata, token && httpOptions)
   }
-  
-  getService(url: string, token: boolean= false, httpOptions: any={}){ 
 
-    return this.HttpClient.get(this.BaseUrl+url,token && httpOptions) 
- }
+  getService(url: string, token: boolean = false, httpOptions: any = {}) {
+
+    return this.HttpClient.get(this.BaseUrl + url, token && httpOptions)
+  }
+
+  putService(url: any, reqdata: any, tokenRequired: boolean = false, httpOption: any) {
+
+    return this.HttpClient.put(this.BaseUrl + url, reqdata, tokenRequired && httpOption)
+  }
+  deleteService(url: string = '', reqdata: any, tokenRequired: boolean = false, httpOption: any) {
+
+    return this.HttpClient.delete(this.BaseUrl + url, tokenRequired && httpOption)
+  }
 }

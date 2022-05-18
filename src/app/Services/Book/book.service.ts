@@ -24,19 +24,10 @@ export class BookService {
     return this.httpService.getService('/bookstore_user/get/book', true, headers)
   }
 
-  addToCart(productID: any) {  
-    this.token = localStorage.getItem('token')
+  
 
-    let header = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': this.token   
-      })
-    }
-    return this.httpService.postService('/bookstore_user/add_cart_item/{product_id}' + productID, {}, true, header)
-  }
-
-  AddToWishList(data: any) {
+  AddToWishList(productId: any) {
+    console.log('productId',productId)
     this.token = localStorage.getItem('token');
 
     let header = {
@@ -45,11 +36,23 @@ export class BookService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.postService('/bookstore_user/add_wish_list/'+data._id,{},true, header);
+    return this.httpService.postService('/bookstore_user/add_wish_list/' + productId, {}, true, header);
   }
 
-  getWishList(){
+    addToBag(productId: any) {
+    console.log('productId',productId)
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add_cart_item/' + productId, {}, true, header)
+  }
+
+  getCart() {
     this.token = localStorage.getItem('token');
+    console.log('token',this.token);
 
     let header = {
       headers: new HttpHeaders({
@@ -57,9 +60,40 @@ export class BookService {
         'x-access-token': this.token
       })
     }
-    console.log(header); 
+    console.log(header);
+    return this.httpService.getService('/bookstore_user/get_cart_items/', true, header);
+  }
+
+  PutOrder(reqdata: any) {
     
-    return this.httpService.getService('/bookstore_user/get_wishlist_items',true,header);
-
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.putService('/bookstore_user/edit_user/',reqdata, true, header)
   }
+
+  removecartitem(productID: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token    
+      })
+    }
+    return this.httpService.deleteService('/bookstore_user/remove_cart_item/' + productID, {}, true, header)
+  }
+
+  order(reqdata: any) {
+    this.token = localStorage.getItem('token');
+    let options = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add/order',reqdata,true, options);
+  }
+  
 }

@@ -1,7 +1,7 @@
 <div class="mainheader" fxLayout="column">
     <div style="width: 80%;">
         <div style="width: 100%; margin-top: 2%;">
-            <span style="color:gray;">Home/</span><span> Books(16) </span>
+            <span style="color:gray;" routerLink="/dashboard/getallbook">Home/</span><span> Books(16) </span>
         </div>
         <div class="header">
             <div class="Books">
@@ -42,7 +42,7 @@
 
                 <div class="price" fxLayout="row">
                     <div class="discountprice">
-                        Rs.{{bookdata?.discountPrice}}
+                        Rs. 1500{{bookdata?.discountPrice}}
                     </div>
                     <div class="originalprice">
                         <del> Rs.2000{{bookdata?.originalPrice}} </del>
