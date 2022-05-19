@@ -8,7 +8,7 @@
                 <div class="smallimages">
                     <div class="small1">
                         <img class="img1" src="../../../assets/Bookimg/book1.png" alt="">
-                  </div>
+                    </div>
                     <div class="small2">
                         <img class="img2" src="../../../assets/Bookimg/small book.png" alt="">
                     </div>
@@ -27,25 +27,25 @@
             </div>
             <div class="bookdetails">
                 <div class="bookname">
-                    Don't Make Me Think {{bookdata?.bookName}}
+                    {{Book?.bookName}}
                 </div>
                 <div class="author">
-                    by Steve krug {{bookdata?.authorName}}
+                    by {{Book?.author}}
                 </div>
                 <div class="rating" fxLayoutAlign="space-evenly center">
                     4.5<img class="Star" src="../../../assets/Bookimg/star_outline_white_24dp (1).svg" alt="">
                 </div>
                 <p id="count">(20)</p>
                 <div class="quantity">
-                    {{bookdata?.bookCount}}
+                    {{Book?.bookCount}}
                 </div>
 
                 <div class="price" fxLayout="row">
                     <div class="discountprice">
-                        Rs. 1500{{bookdata?.discountPrice}}
+                        Rs. {{Book?.discountPrice}}
                     </div>
                     <div class="originalprice">
-                        <del> Rs.2000{{bookdata?.originalPrice}} </del>
+                        <del> Rs.{{Book?.price}} </del>
                     </div>
                 </div>
                 <div class="para">
@@ -67,7 +67,45 @@
                     <p>Customer Feedback</p>
                 </div>
 
+                <div class="overallrating">
+                    <div class="rate-para">
+                        <p class="ratename">Overall Rating</p>
+                        <div>
+                            <div class="rate">
+
+                                <input type="radio" id="star5" name="rate" [(ngModel)]="value" value="5" />
+                                <label for="star5" title="Extremely Good">5 stars</label>
+                                <input type="radio" id="star4" name="rate" [(ngModel)]="value" value="4" />
+                                <label for="star4" title="Very Good">4 stars</label>
+                                <input type="radio" id="star3" name="rate" [(ngModel)]="value" value="3" />
+                                <label for="star3" title="Good">3 stars</label>
+                                <input type="radio" id="star2" name="rate" [(ngModel)]="value" value="2" />
+                                <label for="star2" title="Not Bad">2 stars</label>
+                                <input type="radio" id="star1" name="rate" [(ngModel)]="value" value="1" />
+                                <label for="star1" title="Bad">1 star</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <input class="review" type="text" placeholder="Write your review">
+                    </div>
+                    <div fxLayoutAlign="end center">
+                        <button class="submitbutton" mat-flat-button color="primary"
+                            (click)="addFeedback()">Submit</button>
+                    </div>
+                    <div  class="feedback"  *ngFor="let feedback of booksArray" >
+                        <div  style="background-color:gainsboro;">
+                            <span class="feedback-Name"> <b>User:</b>{{getShortName (feedback.user_id.fullName)}}</span>
+                        </div>
+                        <div>
+                            <span class="rating"> {{feedback.rating}} </span>
+                        </div>
+                        <div>
+                            <span class="comment"> {{feedback.comment}}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>

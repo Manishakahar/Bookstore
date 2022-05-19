@@ -23,7 +23,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'getallbook', pathMatch: 'full', },
       { path: 'getallbook', component: GetallbookComponent },
-      { path: 'quickview', component: QuickviewComponent },
+      { path: 'quickview/:BookId', component: QuickviewComponent },
       { path: 'getcart', component: GetcartComponent },
       {path: 'placeOrder',component:PlaceOrderComponent}
 

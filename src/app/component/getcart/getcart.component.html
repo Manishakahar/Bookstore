@@ -6,7 +6,7 @@
     <div class="main-content">
         <div class="title-header" fxLayout="row">
             <div fxLayout="row" fxLayoutGap="2px">
-                <span class="title">My Cart(1)</span>
+                <span class="title">My Cart(1) </span>
                 <div>
                     <select class="location">
                         <option> Use Current Location</option>
@@ -14,27 +14,27 @@
                 </div>
             </div>
         </div>
-        <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="bodyBox">
+        <div  class="bodyBox">
 
-            <div style="margin-left:36px;" fxLayoutGap="40px" fxLayout="row wrap" fxLayoutAlign="start center"
+            <div style="margin-left:36px;"  fxLayoutAlign="start center"
                 *ngFor="let Book of booksArray">
 
                 <div>
                     <img src="../../../assets/Bookimg/book1.png" alt="" class="image">
                 </div>
                 
-                    <div class="details-content" fxLayout="column" fxLayoutAlign="start none">
+                    <div class="details-content" >
 
                         <div style="margin-left:15px;" fxLayoutGap="20px">
 
                             <div fxLayout="column">
-                                <h2 class="title">Don't Make Me Think{{Book.bookName}}</h2>
-                                <p id="para">by Steve krug{{Book.author}}</p>
+                                <h2 class="title">{{Book.product_id.bookName}}</h2>
+                                <p id="para"> by {{Book.product_id.author}}</p>
                             </div>
                         </div>
                         <div fxLayout="row wrap" fxLayoutAlign="space-between center">
-                            <b style="margin-left: 18px;">Rs. 1000{{Book.price}}</b>
-                            <del id="del"> Rs.2000{{Book.price}}</del>
+                            <b style="margin-left: 18px;">Rs. {{Book.product_id.price}}</b>
+                            <del id="del"> Rs. {{Book.product_id.price}}</del>
                         </div>
                         <div class="quantitiy" fxLayout="row">
                             <img class="circle" src="../../../assets/Bookimg/remove_circle_outline_black_24dp.svg">
@@ -50,7 +50,7 @@
         <div fxLayoutAlign="end" style="padding-right:20px;">
             <button mat-raised matTooltip="Place Order!" class="button1" *ngIf="showButton"
                 (click)="addressToggle()">
-                Place Order</button>
+                 PLACEORDER</button>
         </div>
         <div *ngIf="!showButton"></div>
     </div>
@@ -66,7 +66,7 @@
     </div>
     <div class="customer" fxLayout="column" *ngIf="!showAddress">
 
-        <div fxLayout="row" fxLayoutAlign="space-around center" style="margin: 10px;">
+        <div  style="margin: 10px;">
 
             <form [formGroup]="BookingForm" class="customerAddress" fxLayout="column wrap" fxLayoutGap="30px;">
 
@@ -75,7 +75,7 @@
                     <span>
                         <h2 id="title-name">Customer Details</h2>
                     </span>
-                    <div class="newAddress" fxFlex="center">
+                    <div class="newAddress" >
                         <button mat-raised-button  *ngIf="showContinueButton" class="address-btn">Add New Address</button>
                     </div>
 
@@ -181,15 +181,15 @@
                         <div  fxLayoutGap="20px">
 
                             <div fxLayout="column">
-                                <h2 class="title">Don't Make Me Think{{Book.bookName}}</h2>
-                                <p id="para">by Steve krug{{Book.author}}</p>
+                                <h2 class="title">{{Book.product_id.bookName}}</h2>
+                                <p id="para">by {{Book.product_id.author}}</p>
                             </div>
 
                         </div>
 
                         <div class="order-price">
-                            <b style="margin-left: 4px;">Rs. 1000{{Book.price}}</b>
-                            <del id="del2"> Rs. 2000{{Book.price}}</del>
+                            <b style="margin-left: 4px;">Rs. {{Book.product_id.price}}</b>
+                            <del id="del2"> Rs. {{Book.product_id.price}}</del>
                         </div>
                     </div>
                 </div>

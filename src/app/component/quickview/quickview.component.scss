@@ -1,52 +1,60 @@
-.mainheader{
-width: 100%;
-display: flex;
-align-items: center;
-height: 94vh;
+.mainheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 94vh;
 }
-.header{
+
+.header {
     width: 80%;
     display: flex;
     flex-direction: row;
     height: 90vh;
 }
 
-.smallimages{ 
+.smallimages {
     margin-left: 50px;
     margin-top: 28%;
 }
-.small1{
+
+.small1 {
     border: 1px solid rgb(165, 42, 42);
-    background-color: rgba(255, 192, 203, 0.562); 
+    background-color: rgba(255, 192, 203, 0.562);
     padding: 4px;
 }
-.img1{
+
+.img1 {
     width: 40px;
     height: 50px;
     padding-top: 5px;
 }
-.small2{
-    border: 1px solid gainsboro ; 
+
+.small2 {
+    border: 1px solid gainsboro;
     padding: 4px;
 
 }
-.img2{
+
+.img2 {
     width: 40px;
     height: 50px;
     padding-top: 3px;
 }
-.maincontent{
+
+.maincontent {
     width: 35%;
     padding: 1%;
     margin-top: 2%;
     align-items: flex-start !important;
 }
-.image{
+
+.image {
     padding: 4%;
     height: 415px;
     border: 3px solid gainsboro;
 }
-.btn{
+
+.btn {
     background-color: brown;
     color: white;
     border: aliceblue;
@@ -56,7 +64,8 @@ height: 94vh;
     margin-left: 1%;
     cursor: pointer;
 }
-.btn2{
+
+.btn2 {
     background-color: black;
     color: white;
     padding: 5px;
@@ -67,30 +76,33 @@ height: 94vh;
 }
 
 
-#fav-icons{
+#fav-icons {
     color: white;
     font-size: 122%;
     padding-top: 4px;
 }
-.bookdetails{
+
+.bookdetails {
     width: 55%;
-    
+
 }
-.bookname{
+
+.bookname {
     font-size: 26px;
     width: inherit;
     margin-top: 6%;
     padding-left: 8%;
 }
 
-.author{
+.author {
     color: grey;
     font-size: 14px;
     padding-top: 3%;
     padding-left: 8%;
-   
+
 }
-.rating{
+
+.rating {
     background: rgba(0, 100, 0, 0.87);
     height: 20px;
     width: 46px;
@@ -99,51 +111,140 @@ height: 94vh;
     margin-top: 3%;
     margin-left: 8%;
 }
-.Star{
+
+.Star {
     height: 15px;
     width: 15px;
-    font-size: 10px; 
+    font-size: 10px;
     margin-top: -1px;
 }
+
 #count {
     margin-left: 19%;
     margin-top: -6%;
     color: gray;
 }
-.quantity{
+
+.quantity {
     font-size: 15px;
     margin-top: 23px;
     margin-left: 55px;
     color: grey;
-  }
-.price{
+}
+
+.price {
     font-size: 20px;
 }
-.discountprice{
-    font-weight: 600; 
+
+.discountprice {
+    font-weight: 600;
     margin-left: 8%;
 
 }
-.originalprice{
+
+.originalprice {
     color: grey;
     margin-left: 9%;
 }
-.para{
+
+.para {
     padding-left: 8%;
     padding-top: 5%;
 }
-.booktitle{
+
+.booktitle {
     font-size: medium;
     color: gray;
 }
-.bookparagraph{
+
+.bookparagraph {
     font-size: small;
     color: gray;
 }
-.feedback{
-    font-size: 18px; 
+
+.feedback {
+    font-size: 18px;
     margin-top: 20px;
     margin-left: 7%;
+}
+
+.overallrating {
+    background: whitesmoke;
+    margin-left: 7%;
+}
+
+.rate-para {
+    margin-left: 15px;
+}
+
+.ratename {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
 
 }
+.rate1{
+
+    padding: 0px;
+    width: 100%;
+ background-color: #E4E4E4;
+}
+.rate {
+    height: 26px;
+    margin-right: 68%;
+    background-color: whitesmoke;
+  
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    margin-bottom: 4px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+
+.review {
+    height: 60px;
+    width: 90%;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    font-size: 15px;
+    opacity: 0.6;
+
+}
+
+.submitbutton {
+    height: 33px;
+    width: 95px;
+    margin-right: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    background: blue;
+    border: none;
+}
+
+.userfeedback {
+    // border: 1px solid gainsboro;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+
+
+
 

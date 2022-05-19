@@ -9,6 +9,7 @@ import { BookService } from 'src/app/Services/Book/book.service';
 })
 export class GetallbookComponent implements OnInit {
   booksArray: any = [];
+  Bookid:any;
   Book: any;
   token: any;
   constructor(private httpGetAllBook: BookService, private router: Router) { }
@@ -22,6 +23,7 @@ export class GetallbookComponent implements OnInit {
       console.log(response);
       this.booksArray = response.result;
       console.log(this.booksArray);
+   
     });
   }
 
@@ -37,5 +39,13 @@ export class GetallbookComponent implements OnInit {
      console.log('Add To Bag ',response)
    })
    }
+
+   quickview(Book:any){  
+    localStorage.setItem('BookId', Book._id); 
+    this.router.navigateByUrl('/dashboard/quickview/' + Book._id)
+  }
+
+
+
 
 }

@@ -95,5 +95,30 @@ export class BookService {
     }
     return this.httpService.postService('/bookstore_user/add/order',reqdata,true, options);
   }
+
+  getfeedBack(productID:any){
+
+    let header = {
+      headers: new HttpHeaders({  
+       'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    console.log(header); 
+    
+    return this.httpService.getService('/bookstore_user/get/feedback/'+ productID,true,header);
+  
+  }
+  
+  addfeedback(productID:any){
+    console.log('productId',productID)
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add/feedback/' + productID, {}, true, header)
+  }
   
 }

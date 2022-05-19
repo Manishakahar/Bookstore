@@ -130,7 +130,7 @@
 }
 
 #del {
-    margin-right: 68px;
+    margin-right: 40px;
     color: gray
 }
 
@@ -179,7 +179,6 @@
     color: white;
     border-radius: 3px;
     cursor: pointer;
-    margin-right: 1%;
     margin-top: -6%;
 }
 
@@ -208,10 +207,10 @@
     width: 69%;
 }
 
-
-#title-name {
-    margin-left: -105%;
+.newAddress{
+    margin-right: -43%;
 }
+
 
 .address-btn {
     background: none;
@@ -219,7 +218,6 @@
     border: 1px solid brown;
     color: brown;
     margin-top: 10%;
-    margin-right: -141px;
     padding: 7px
 }
 
@@ -232,11 +230,11 @@
 }
 
 .fullName {
-    margin-left: -32%;
+    margin-left: 2%;
 }
 
 .phoneNumber {
-    margin-right: 44%;
+    margin-right: 12%;
 }
 
 .form-conten {
@@ -250,8 +248,8 @@
     flex-direction: column;
     box-sizing: border-box;
     display: flex;
-    margin-left: -167px;
-    margin-right: 43%;
+    margin-left: 12px;
+    margin-right: 13%;
 }
 .city{
    
@@ -294,8 +292,9 @@
     color: white;
     border-radius: 3px;
     cursor: pointer;
-    margin-right: -551%;
-    margin-top: -6%;
+    margin-right: -424%;
+    margin-top: -71%;
+    // margin-top: -6%;
     width: 167%;
     height: 35px;
 }

@@ -16,8 +16,8 @@
 
     <div class="bookcard">
         <div class="entirebook" *ngFor="let Book of booksArray">
-            <div class="bookimg">
-                <img class="img1" src="../../../assets/Bookimg/book1.png" alt="" routerLink="/dashboard/quickview">
+            <div class="bookimg" >
+                <img class="img1" src="../../../assets/Bookimg/book1.png" alt="" (click)="quickview(Book)">
             </div>
             <h2 class="title">{{Book.bookName}}</h2>
             <p id="para">by {{Book.author}}</p>
