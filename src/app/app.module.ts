@@ -6,15 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
+import {ReactiveFormsModule ,FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import {FlexLayoutModule } from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { SignUpComponent } from './component/sign-up/sign-up.component';
@@ -25,6 +26,8 @@ import { GetallbookComponent } from './component/getallbook/getallbook.component
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { GetcartComponent } from './component/getcart/getcart.component';
 import { PlaceOrderComponent } from './component/place-order/place-order.component';
+import { PipePipe } from './component/pipe/pipe.pipe';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { PlaceOrderComponent } from './component/place-order/place-order.compone
     GetallbookComponent,
     QuickviewComponent,
     GetcartComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    PipePipe,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,9 @@ import { PlaceOrderComponent } from './component/place-order/place-order.compone
     FlexLayoutModule,
     MatExpansionModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    NgxPaginationModule
+    
 
   ],
   providers: [],

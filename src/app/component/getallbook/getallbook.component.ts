@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/Services/Book/book.service';
+import { DataserviceService } from 'src/app/Services/DataService/dataservice.service';
 
 @Component({
   selector: 'app-getallbook',
@@ -12,9 +13,20 @@ export class GetallbookComponent implements OnInit {
   Bookid:any;
   Book: any;
   token: any;
-  constructor(private httpGetAllBook: BookService, private router: Router) { }
+  searchword: any; 
+  page:number = 1;
+  totalLength:any;
+  
+  
+  constructor(private httpGetAllBook: BookService,  private dataservice: DataserviceService, private router: Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.dataservice.receivedData.subscribe((response) => {
+      console.log(response)
+          this.searchword = response;
+          console.log(this.searchword);
+    }) ;
+   
     this.getAllBook();
   }
 
@@ -46,6 +58,14 @@ export class GetallbookComponent implements OnInit {
   }
 
 
-
+  lowtohigh(){
+    this.booksArray= this.booksArray.sort((low:any,high:any)=> low.discountPrice-high.discountPrice);
+    }
+  hightolow(){
+    this.booksArray= this.booksArray.sort((low:any,high:any)=> high.discountPrice-low.discountPrice);
+  }
+  newestarrivals(){
+    this.booksArray.reverse();
+  }
 
 }

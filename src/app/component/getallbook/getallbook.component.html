@@ -7,16 +7,17 @@
         <mat-form-field appearance="outline">
             <mat-label>Sort by relevance</mat-label>
             <mat-select class="matselect">
-                <mat-option>Price:Low to High</mat-option>
-                <mat-option>Price:High to Low</mat-option>
-                <mat-option>Newest Arrivals</mat-option>
+                <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+                <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+                <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
 
     <div class="bookcard">
-        <div class="entirebook" *ngFor="let Book of booksArray">
-            <div class="bookimg" >
+        <div class="entirebook"
+            *ngFor="let Book of booksArray | pipe:searchword  ">
+            <div class="bookimg">
                 <img class="img1" src="../../../assets/Bookimg/book1.png" alt="" (click)="quickview(Book)">
             </div>
             <h2 class="title">{{Book.bookName}}</h2>
@@ -32,12 +33,13 @@
                 <div class="actual-price">
                     Rs.{{Book.price}}
                 </div>
-                <button mat-raised-button class="add-btn"  (click)="AddToBag(Book)"> ADD TO BAG </button>
-               
+                <button mat-raised-button class="add-btn" (click)="AddToBag(Book)"> ADD TO BAG </button>
+
                 <button class="btn2" (click)="AddToWishList(Book)">
                     <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
                 </button>
             </div>
+            
         </div>
     </div>
 </div>

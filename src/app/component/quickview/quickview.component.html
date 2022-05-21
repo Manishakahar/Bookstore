@@ -88,21 +88,25 @@
 
                     </div>
                     <div>
-                        <input class="review" type="text" placeholder="Write your review">
+                        <input class="review" [(ngModel)]="feedback" type="text" placeholder="Write your review">
                     </div>
                     <div fxLayoutAlign="end center">
                         <button class="submitbutton" mat-flat-button color="primary"
                             (click)="addFeedback()">Submit</button>
                     </div>
-                    <div  class="feedback"  *ngFor="let feedback of booksArray" >
-                        <div  style="background-color:gainsboro;">
-                            <span class="feedback-Name"> <b>User:</b>{{getShortName (feedback.user_id.fullName)}}</span>
-                        </div>
-                        <div>
-                            <span class="rating"> {{feedback.rating}} </span>
-                        </div>
-                        <div>
-                            <span class="comment"> {{feedback.comment}}</span>
+
+
+                    <div style="display: flex; flex-direction: column-reverse;">
+                        <div class="feedback-box"   fxLayoutGap ="20px"  *ngFor="let feedback of booksArray">
+                            <div class="user"   >
+                                <span class="user-feedback"> <b>User:</b> {{(feedback.user_id.fullName)}}</span>
+                            </div>
+                            <div>
+                                <span class="user-rating"> <b>Rating:</b> {{feedback.rating}} </span>
+                            </div>
+                            <div>
+                                <span class="user-comment"><b>Comment:</b>  {{feedback.comment}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

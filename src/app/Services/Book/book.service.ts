@@ -96,8 +96,8 @@ export class BookService {
     return this.httpService.postService('/bookstore_user/add/order',reqdata,true, options);
   }
 
-  getfeedBack(productID:any){
-
+  getfeedBack(data: any){
+    this.token = localStorage.getItem('token');
     let header = {
       headers: new HttpHeaders({  
        'Content-Type': 'application/json',
@@ -105,12 +105,11 @@ export class BookService {
       })
     }
     console.log(header); 
-    
-    return this.httpService.getService('/bookstore_user/get/feedback/'+ productID,true,header);
+    return this.httpService.getService('/bookstore_user/get/feedback/'+ data.product_id,true,header);
   
   }
   
-  addfeedback(productID:any){
+  addfeedback(productID:any,data:any){
     console.log('productId',productID)
     let header = {
       headers: new HttpHeaders({
@@ -118,7 +117,7 @@ export class BookService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.postService('/bookstore_user/add/feedback/' + productID, {}, true, header)
+    return this.httpService.postService('/bookstore_user/add/feedback/' + productID, data, true, header)
   }
   
 }

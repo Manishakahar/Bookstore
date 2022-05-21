@@ -14,15 +14,14 @@ export class QuickviewComponent implements OnInit {
   getShortName: any;
   token: any;
   rating: any;
-   value: any;
+  value: any;
   comment: any;
-
   constructor(private bookService: BookService) { }
-
   ngOnInit(): void {
     this.BookId = localStorage.getItem("BookId");
     console.log(this.BookId);
     this.getUserAllBook();
+     this.getUserFeedback();
   }
 
   getUserAllBook() {
@@ -36,11 +35,11 @@ export class QuickviewComponent implements OnInit {
   }
 
   addFeedback() {
-    let data={
-      comment:this.feedback,
-      rating:this.value
+    let data = {
+      comment: this.feedback,
+      rating: this.value
     }
-    this.bookService.addfeedback( data, this.BookId).subscribe((response: any) => {
+    this.bookService.addfeedback(this.BookId, data).subscribe((response: any) => {
       console.log("User Feedback", response);
     })
   }
