@@ -8,6 +8,7 @@ import { GetallbookComponent } from './component/getallbook/getallbook.component
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { GetcartComponent } from './component/getcart/getcart.component';
 import { PlaceOrderComponent } from './component/place-order/place-order.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,9 @@ const routes: Routes = [
       { path: 'getallbook', component: GetallbookComponent },
       { path: 'quickview/:BookId', component: QuickviewComponent },
       { path: 'getcart', component: GetcartComponent },
-      {path: 'placeOrder',component:PlaceOrderComponent}
+      { path: 'placeOrder', component: PlaceOrderComponent },
+      {path: 'wishlist',component:WishlistComponent},
+      
 
     ]
   },

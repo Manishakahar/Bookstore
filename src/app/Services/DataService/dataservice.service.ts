@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 export class DataserviceService {
 
 
-  private messageSource = new BehaviorSubject('');   // unrelated data sharing
+  private messageSource = new BehaviorSubject('');   // unrelated Components data sharing
   receivedData = this.messageSource.asObservable();
 
   constructor() { }

@@ -57,21 +57,21 @@
 .btn {
     background-color: brown;
     color: white;
-    border: aliceblue;
-    padding: 13px;
-    margin-top: 8%;
-    width: 34%;
-    margin-left: 1%;
+    border: none;
+    height: 35px;
+    margin-top: 136%;
+    width: 82%;
+    margin-left: -101%;
     cursor: pointer;
 }
 
 .btn2 {
     background-color: black;
     color: white;
-    padding: 5px;
-    margin-top: -13%;
-    width: 38%;
-    margin-left: 42%;
+    margin-top: 134%;
+    width: 78%;
+    height: 38px;
+    margin-left: 18%;
     cursor: pointer;
 }
 
@@ -89,16 +89,15 @@
 
 .bookname {
     font-size: 26px;
-    width: inherit;
     margin-top: 6%;
-    padding-left: 8%;
+    padding-left: 19%;
 }
 
 .author {
     color: grey;
     font-size: 14px;
     padding-top: 3%;
-    padding-left: 8%;
+    padding-left: 19%;
 
 }
 
@@ -109,7 +108,7 @@
     color: white;
     margin-bottom: 10px;
     margin-top: 3%;
-    margin-left: 8%;
+    margin-left: 19%;
 }
 
 .Star {
@@ -120,8 +119,8 @@
 }
 
 #count {
-    margin-left: 19%;
-    margin-top: -6%;
+    margin-left: 33%;
+    margin-top: -8%;
     color: gray;
 }
 
@@ -138,7 +137,7 @@
 
 .discountprice {
     font-weight: 600;
-    margin-left: 8%;
+    margin-left: 19%;
 
 }
 
@@ -153,11 +152,13 @@
 }
 
 .booktitle {
+    margin-left: 12%;
     font-size: medium;
     color: gray;
 }
 
 .bookparagraph {
+    margin-left: 12%;
     font-size: small;
     color: gray;
 }
@@ -165,13 +166,13 @@
 .feedback {
     font-size: 18px;
     margin-top: 20px;
-    margin-left: 7%;
+    margin-left: 19%;
 }
 
 .overallrating {
     height: 32%;
     background: whitesmoke;
-    margin-left: 7%;
+    margin-left: 19%;
 }
 
 .rate-para {
@@ -184,37 +185,39 @@
     margin-top: 10px;
 
 }
-.rate1{
 
+.rate1 {
     padding: 0px;
     width: 100%;
- background-color: #E4E4E4;
+    background-color: #E4E4E4;
 }
+
 .rate {
-    height: 26px;
-    margin-right: 68%;
-    background-color: whitesmoke;
-  
+    margin-right: 63%;
 }
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
 }
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
     margin-bottom: 4px;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
 }
-.rate:not(:checked) > label:before {
+
+.rate:not(:checked)>label:before {
     content: '★ ';
 }
-.rate > input:checked ~ label {
-    color: #ffc700;    
+
+.rate>input:checked~label {
+    color: #ffc700;
 }
 
 .review {
@@ -244,18 +247,13 @@
     margin-top: 20px;
     margin-left: 5px;
 }
- .feedback-box{
+
+.feedback-box {
     margin: 5px;
     border: 1px solid;
     background: white;
- }
- .user{
-  margin-top: 1px;
- }
- 
-     
+}
 
-
-
-
-
+.user {
+    margin-top: 1px;
+}

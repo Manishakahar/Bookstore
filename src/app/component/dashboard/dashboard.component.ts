@@ -22,4 +22,12 @@ export class DashboardComponent implements OnInit {
     console.log(search);  
     this.dataService.sendData(search) 
   }
+
+  wishlist() {
+    this.route.navigateByUrl("/dashboard/wishlist")
+  }
+  Logout() {
+    
+    this.route.navigateByUrl('/login')
+  }
 }

@@ -14,8 +14,8 @@ export class PipePipe implements PipeTransform {
 
     const allbooks = []
     for (const book of value) {
-      if (book.bookName.toLowerCase().includes(filterString)
-        ) {
+      if (book.bookName.toLowerCase().includes(filterString)) {
+        
         allbooks.push(book);
       }
     }

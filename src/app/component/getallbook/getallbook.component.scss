@@ -1,11 +1,11 @@
 .bookCount {
-    margin-left: 134px;
+    margin-left: 4%;
     margin-top: 20px;
 }
 
 #book-count {
-    margin-top: -22px;
-    margin-left: 5%;
+    margin-top: -20px;
+    margin-left: 111%;
     font-size: medium;
     color: gainsboro;
 }
@@ -37,7 +37,7 @@
 
     display: flex;
     flex-wrap: wrap;
-    margin-left: 2%
+    margin-left: 2%;
 }
 
 .entirebook {
@@ -125,6 +125,7 @@
     width: 40%;
     cursor: pointer;
 }
+
 .btn2 {
     background-color: black;
     color: white;
@@ -136,12 +137,28 @@
 }
 
 
-#fav-icons{
+#fav-icons {
     color: white;
     font-size: 122%;
 }
 
 .booktitle {
     width: 55%;
+
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 851px) and (-webkit-min-device-pixel-ratio: 1) {
+    .bookcard {
+        margin-left: 12%;
+    }
+
+    #book-count {
+        margin-left: 111%;
+    } 
+
+    .sort {
+        margin-top: -11px;
+        margin-left: 37%;
+    }
 
 }

@@ -1,9 +1,9 @@
 <div>
-    <div class="bookCount">
+    <div class="bookCount"  fxLayout="row" fxLayoutAlign.sm="start start"  >
         <span class="books">Books <p id="book-count">(28)</p></span>
         <span class="count"></span>
     </div>
-    <div class="sort">
+    <div class="sort" fxLayoutGap.sm="20px">
         <mat-form-field appearance="outline">
             <mat-label>Sort by relevance</mat-label>
             <mat-select class="matselect">
@@ -14,10 +14,10 @@
         </mat-form-field>
     </div>
 
-    <div class="bookcard">
+    <div class="bookcard"  fxLayout="row" fxLayoutAlign.sm="space-around center">
         <div class="entirebook"
-            *ngFor="let Book of booksArray | pipe:searchword  ">
-            <div class="bookimg">
+            *ngFor="let Book of booksArray | pipe:searchword  | paginate: { itemsPerPage: 10, currentPage: page, totalItems:totalLength } ">
+            <div class="bookimg" >
                 <img class="img1" src="../../../assets/Bookimg/book1.png" alt="" (click)="quickview(Book)">
             </div>
             <h2 class="title">{{Book.bookName}}</h2>
@@ -30,7 +30,7 @@
                 <div class="dicounted-price">
                     <b>Rs.1000</b>
                 </div>
-                <div class="actual-price">
+                <div class="actual-price">01
                     Rs.{{Book.price}}
                 </div>
                 <button mat-raised-button class="add-btn" (click)="AddToBag(Book)"> ADD TO BAG </button>
@@ -39,7 +39,11 @@
                     <mat-icon id="fav-icons">favorite</mat-icon>WHISH LIST
                 </button>
             </div>
-            
+
         </div>
+    </div>
+
+    <div fxLayoutAlign="center center">
+        <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
     </div>
 </div>

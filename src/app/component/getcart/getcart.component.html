@@ -1,10 +1,10 @@
 <div class="main">
-    <div class="heading">
+    <div class="heading"  fxLayout="row" fxLayoutAlign.sm="start start">
         <span class="home" routerLink="/dashboard/getallbook">Home /</span><span> My cart</span>
     </div>
 
-    <div class="main-content">
-        <div class="title-header" fxLayout="row">
+    <div class="main-content" fxFlex.sm="50">
+        <div class="title-header" fxLayout="row"  fxFlex.sm="50">
             <div fxLayout="row" fxLayoutGap="2px">
                 <span class="title">My Cart(1) </span>
                 <div>
@@ -14,9 +14,9 @@
                 </div>
             </div>
         </div>
-        <div  class="bodyBox">
+        <div  class="bodyBox" fxLayout="row" fxLayoutAlign.sm="center start">
 
-            <div style="margin-left:36px;"  fxLayoutAlign="start center"
+            <div  fxLayoutAlign="start center"
                 *ngFor="let Book of booksArray">
 
                 <div>

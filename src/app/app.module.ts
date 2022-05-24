@@ -15,6 +15,7 @@ import {FlexLayoutModule } from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 
@@ -27,6 +28,8 @@ import { QuickviewComponent } from './component/quickview/quickview.component';
 import { GetcartComponent } from './component/getcart/getcart.component';
 import { PlaceOrderComponent } from './component/place-order/place-order.component';
 import { PipePipe } from './component/pipe/pipe.pipe';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
+
 
 
 @NgModule({
@@ -41,7 +44,8 @@ import { PipePipe } from './component/pipe/pipe.pipe';
     GetcartComponent,
     PlaceOrderComponent,
     PipePipe,
-    
+    WishlistComponent,
+   
     
   ],
   imports: [
@@ -61,6 +65,7 @@ import { PipePipe } from './component/pipe/pipe.pipe';
     MatExpansionModule,
     MatDividerModule,
     MatRadioModule,
+    MatMenuModule,
     NgxPaginationModule
     
 

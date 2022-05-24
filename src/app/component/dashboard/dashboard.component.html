@@ -1,21 +1,45 @@
 <div class="container">
-  <div>
-  <mat-toolbar class="tool" fxLayout="row" >
-    <div class="titleText" fxLayout="row">
-      <img src="../../../assets/Bookimg/icon(1).png"  class="img-Icon"/>
-      <a id="text">BookStore</a>
-    </div>
 
-    <mat-card class="search" fxLayout="row" fxLayoutAlign="space-around center">
-      <button mat-icon-button>
-        <mat-icon class="searchIcon">search</mat-icon>
+  <div fxFlex.sm="50">
+    <mat-toolbar class="tool" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="titleText" fxLayout="row" fxFlex.xs="1px" >
+        <img src="../../../assets/Bookimg/icon(1).png" class="img-Icon" />
+        <a id="text">BookStore</a>
+      </div>
+
+      <mat-card class="search" fxLayout="row" fxLayoutAlign="space-around center" fxHide.xs>
+        <button mat-icon-button>
+          <mat-icon class="searchIcon">search</mat-icon>
+        </button>
+        <input class="searchInput" type="text" name="search" placeholder="Search.." #search
+          (keyup)="clearFilter(search.value)" />
+      </mat-card>
+
+      <button class="Profile" mat-button [matMenuTriggerFor]="menu" >Profile <mat-icon class="searchIcon">perm_identity
+        </mat-icon>
+
+        <mat-menu class="matmenu" #menu="matMenu">
+          <div fxLayout="column" fxLayoutGap="3px" style="width: 200px;">
+            <h3 class="welcome">Hello Manisha,</h3>
+          </div>
+        
+          
+          <button class="wishlistbutton" mat-menu-item  fxLayoutAlign.sm="end center" (click)="wishlist()">
+            <mat-icon class="wishlistIcon">favorite</mat-icon> My Wishlist
+          </button>
+             
+          <div style="margin-top: 10px;" mat-menu-item fxLayoutGap="0px">
+            <button (click)="Logout()" class="loginbutton">Logout</button>
+          </div>
+        </mat-menu>
       </button>
-      <input class="searchInput" type="text" name="search" placeholder="Search.." #search (keyup)="clearFilter(search.value)" />
-    </mat-card>
-   
-    <button  class="Profile" mat-button >Profile <mat-icon class="searchIcon" >perm_identity</mat-icon></button> 
-    <button class="cart" mat-button  routerLink="./getcart">Cart<mat-icon >shopping_cart</mat-icon></button>
-  </mat-toolbar>
+
+
+     <div  fxLayout ="row"   fxLayoutAlign=" "  fxLayoutAlign.sm ="end center" > 
+      <button class="cart" mat-button routerLink="./getcart">Cart<mat-icon>shopping_cart</mat-icon></button>
+      </div>
+
+    </mat-toolbar>
   </div>
   <div>
     <router-outlet></router-outlet>

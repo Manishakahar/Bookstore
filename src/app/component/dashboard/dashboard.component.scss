@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+.small {
+    width: 80%;
+}
+
 .tool {
     background-color: brown;
 }
@@ -11,14 +15,14 @@
     color: white;
 }
 
-.img-Icon{
+.img-Icon {
     padding-left: 64%;
     padding-right: 10%;
     padding-top: 3%;
 }
 
 .search {
-    margin-left: 15%;
+    margin-left: 8%;
     width: 33%;
     height: 54%;
     padding: 0px;
@@ -34,29 +38,62 @@
     font-style: normal;
     color: dimgrey;
 }
-.mat-card>:first-child, .mat-card-content>:first-child {
+
+.mat-card>:first-child,
+.mat-card-content>:first-child {
     margin-top: 0px;
     display: contents;
     color: gray;
-   
+
 }
-.Profile{
+
+.Profile {
     display: flex;
     flex-direction: column-reverse;
     background: brown;
     border-color: brown;
     color: white;
     border: transparent;
-    padding-left: 7%;
+    margin-right: -8%;
     cursor: pointer;
 }
-.cart{
+
+.cart {
     display: flex;
     flex-direction: column-reverse;
     background: brown;
     border-color: brown;
     color: white;
     border: transparent;
-    padding-left: 5%;
+    margin-right: 18%;
     cursor: pointer;
+}
+
+.wishlistIcon {
+    color: brown;
+}
+
+.wishlistbutton {
+    margin-top: 1px;
+}
+
+.welcome {
+    margin-left: 40px;
+}
+
+.loginbutton {
+    height: 50%;
+    width: 65%;
+    margin-left: 27px;
+    border-color: brown;
+    color: brown;
+    cursor: pointer;
+    background: white;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 851px) and (-webkit-min-device-pixel-ratio: 1) {
+    .Profile {
+        margin-right: -60%;
+    }
+
 }
